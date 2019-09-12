@@ -1,7 +1,7 @@
-# [Introduction](README.md)
+# Introduction
 # [Coding Style](coding-style.md)
 # [Cross-Platform Compatibility](crossplatform-compatibility.md)
-# [Design Guidelines](design-guidelines/index.md)
+# Design Guidelines
 ## [Naming](design-guidelines/naming/index.md)
 ### [Capitalization Conventions](design-guidelines/naming/capitalization-conventions.md)
 ### [General Naming Conventions](design-guidelines/naming/general-naming-conventions.md)

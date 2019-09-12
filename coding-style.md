@@ -26,6 +26,9 @@ The general rule we follow is "use Visual Studio defaults" with some modificatio
 15. We use ```nameof(...)``` instead of ```"..."``` whenever possible and relevant.
 16. Fields should be specified at the top within type declarations.
 17. When including non-ASCII characters in the source code use Unicode escape sequences (\uXXXX) instead of literal characters. Literal non-ASCII characters occasionally get garbled by a tool or editor.
+18. We encourage early return usage as much as possible.
+19. We use [Code Contracts](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts) to check preconditions, postconditions, and object invariants in a code block.
+20. We prefer [string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) over concatination of strings with '+' operator.
 
 
 ### Example File:
@@ -73,10 +76,10 @@ namespace System.Collections.Generic {
 
             if (handler != null) {
                 handler(this, e);
+                return;
             }
-            else {
-                Debug.Write("no handlers for collection change event");
-            }
+
+            Debug.Write("no handlers for collection change event");
         }
 
         private void InsertNodeBefore(LinkedListNode<T> node, LinkedListNode<T> newNode) {
